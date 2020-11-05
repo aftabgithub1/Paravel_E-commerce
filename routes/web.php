@@ -15,7 +15,7 @@ Route::get('/about', 'FrontendController@about');
 Route::get('/faq', 'FrontendController@faq');
 Route::get('/shop', 'FrontendController@shop');
 Route::get('/blog-page', 'FrontendController@blogPage');
-Route::get('/blog-details/{blog_id}', 'FrontendController@blogDetails');
+Route::get('/blog-details/{blog_id}/{blog_title}', 'FrontendController@blogDetails');
 Route::post('/blog-comment-post', 'FrontendController@blogCommentPost')->middleware('verified');
 Route::get('/login-same-page/{blog_id}', 'FrontendController@loginSamePage');
 Route::get('/search', 'FrontendController@search');
@@ -112,6 +112,7 @@ Route::get('categorydelete/{ctg_id}', 'CategoryController@categoryDelete');
 
 // Product
 Route::resource('/product', 'ProductController');
+Route::get('/product-slug/{product_id}/{product_name}', 'ProductController@productSlug');
 
 // Coupon
 Route::resource('/coupon', 'CouponController');

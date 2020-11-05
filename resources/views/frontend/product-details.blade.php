@@ -320,7 +320,7 @@ Product Details
 						<div class="featured-product-content">
 							<div class="row">
 								<div class="col-7">
-									<h3><a href="{{route('product.show',$related_product->product_slug)}}">{{$related_product->product_name}}</a></h3>
+									<h3><a href="{{url('product-slug/'.$related_product->id.'/'.Str::slug($related_product->product_name))}}">{{$related_product->product_name}}</a></h3>
 									<p>Tk. {{$related_product->product_price}}</p>
 								</div>
 								<div class="col-5 text-right">

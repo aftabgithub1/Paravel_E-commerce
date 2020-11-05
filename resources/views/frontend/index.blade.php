@@ -144,7 +144,7 @@ Home
 						</div>
 					</div>
 					<div class="product-content">
-						<h3><a href="{{route('product.show', $best_seller->productTable->product_slug)}}">{{$best_seller->productTable->product_name}}</a></h3>
+						<h3><a href="{{url('product-slug/'.$best_seller->productTable->id.'/'.Str::slug($best_seller->productTable->product_name))}}">{{$best_seller->productTable->product_name}}</a></h3>
 						<p class="pull-left">Tk.{{$best_seller->productTable->product_price}}</p>
 						<div class="pull-right">
 						@component('frontend.frontend-includes.review_stars', ['product_id' => $best_seller->productTable->id])@endcomponent
@@ -251,7 +251,7 @@ Home
 						</div>
 					</div>
 					<div class="product-content">
-						<h3><a href="{{route('product.show', $product->product_slug)}}">{{$product->product_name}}</a></h3>
+						<h3><a href="{{url('product-slug/'.$product->id.'/'.Str::slug($product->product_name))}}">{{$product->product_name}}</a></h3>
 						<p class="pull-left">Tk. {{$product->product_price}}</p>
 						<div class="pull-right">
 						@component('frontend.frontend-includes.review_stars', ['product_id' => $product->id])

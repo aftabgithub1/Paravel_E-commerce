@@ -60,14 +60,14 @@ class ProductController extends Controller
 			'product_short_desp' => 'required',
 		]);
 
-		$product_slug = Str::slug($request->product_name.'-'.Carbon::now()->timestamp);
+		// $product_slug = Str::slug($request->product_name.'-'.Carbon::now()->timestamp);
 		$product_id = Product::insertGetId([
 			'category_id' => $request->category_id,
 			'product_name' => $request->product_name,
 			'product_price' => $request->product_price,
 			'product_short_desp' => $request->product_short_desp,
 			'product_long_desp' => $request->product_long_desp,
-			'product_slug' => $product_slug,
+			// 'product_slug' => $product_slug,
 			'product_quantity' => $request->product_quantity,
 			'created_at' => Carbon::now()
 		]);
@@ -116,19 +116,24 @@ class ProductController extends Controller
 	 * @param  \App\Product  $product
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show($slug)
+	public function show($product_id)
 	{
-		$product_details = Product::where('product_slug', $slug)->first();
-		$related_products = Product::where('category_id', $product_details->category_id)->get();
-		return view('frontend.product-details', compact('product_details', 'related_products'));
+		//
 	}
-
+	
 	/**
 	 * Show the form for editing the specified resource.
 	 *
 	 * @param  \App\Product  $product
 	 * @return \Illuminate\Http\Response
 	 */
+	
+	public function productSlug($product_id)
+	{
+		$product_details = Product::find($product_id);
+		$related_products = Product::where('category_id', $product_details->category_id)->get();
+		return view('frontend.product-details', compact('product_details', 'related_products'));
+	}
 	public function edit(Product $product)
 	{
 		//

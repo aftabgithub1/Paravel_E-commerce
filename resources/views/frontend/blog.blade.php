@@ -55,7 +55,7 @@ Blog Page
                                     <li class="pull-right"><a href="#"><i class="fa fa-clock-o"></i> {{$blog->created_at->format('d/m/Y')}}</a></li>
                                 </ul>
                             </div>
-                            <h3><a href="{{url('blog-details')}}/{{$blog->id}}">{{$blog->title}}</a></h3>
+                            <h3><a href="{{url('blog-details/'.$blog->id.'/'.Str::slug($blog->title))}}">{{$blog->title}}</a></h3>
                             <p>{{substr($blog->description, 0, 150)}}</p>
                         </div>
                     </div>

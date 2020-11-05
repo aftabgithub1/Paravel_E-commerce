@@ -62,11 +62,11 @@ class FrontendController extends Controller
     }
 
     public function blogDetails($blog_id){
-        $recent_blogs = Blog::orderBy('created_at', 'desc')->get();
         $blog = Blog::find($blog_id);
         $blog_comment_count = Blog_comment::where('blog_id',$blog->id)->count();
         $blog_comments = Blog_comment::where('blog_id', $blog->id)->get();
-        return view('frontend.blog_details', compact('recent_blogs','blog', 'blog_comments','blog_comment_count'));
+        $recent_blogs = Blog::orderBy('created_at', 'desc')->get();
+        return view('frontend.blog_details', compact('blog', 'blog_comments','blog_comment_count', 'recent_blogs'));
     }
     
     public function blogCommentPost(Request $request){
