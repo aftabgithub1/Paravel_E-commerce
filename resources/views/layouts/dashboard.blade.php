@@ -82,7 +82,7 @@
 				</a><!-- sl-menu-link -->
 				<ul class="sl-menu-sub nav flex-column">
 					<li class="nav-item"><a href="{{url('users')}}" class="nav-link @yield('users_list')">User List</a></li>
-					<li class="nav-item"><a href="#" class="nav-link @yield('users_add')">Add New User</a></li>
+					<li class="nav-item"><a href="{{url('add-new-users')}}" class="nav-link @yield('add_new_users')">Add New User</a></li>
 					<li class="nav-item"><a href="{{url('role')}}" class="nav-link @yield('users_role')">Role Manegement</a></li>
 				</ul>
 

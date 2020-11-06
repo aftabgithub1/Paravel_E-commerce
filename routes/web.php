@@ -57,6 +57,7 @@ Route::get('/my-account', 'DashboardController@myAccount');
 Route::get('/admin-dashboard', 'DashboardController@adminDashboard')->name('admin-dashboard');
 
 Route::get('/users', 'DashboardController@users')->name('users');
+Route::get('/add-new-users', 'DashboardController@addNewUsers');
 Route::get('/useredit/{user_id}', 'DashboardController@userEdit');
 Route::post('/usereditpost', 'DashboardController@userEditPost');
 

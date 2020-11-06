@@ -58,6 +58,10 @@ class DashboardController extends Controller
 		$total_user = User::count();
 		return view('/admin.users.users', compact('logged_user', 'users', 'total_user'));
 	}
+	public function addNewUsers(){
+		$user_edit = User::all();
+		return view('/admin.users.add_new_users', compact('user_edit'));
+	}
 	public function userEdit($user_id){
 		$user_edit = User::find($user_id);
 		return view('/admin.users.user-edit', compact('user_edit'));
