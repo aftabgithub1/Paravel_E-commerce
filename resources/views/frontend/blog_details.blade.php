@@ -123,7 +123,7 @@ Blog Details
 								@if($recent_blog->id != $blog->id)
 								<li>
 									<div class="mb-1">
-										<a href="{{url('blog-details')}}/{{$recent_blog->id}}"><img src="{{asset('uploads/blogs')}}/{{$recent_blog->image}}"></a>
+										<a href="{{url('blog-details/'.$recent_blog->id.'/'.Str::slug($recent_blog->title))}}"><img src="{{asset('uploads/blogs')}}/{{$recent_blog->image}}"></a>
 									</div>
 									<div class="post-content">
 										<a href="{{url('blog-details')}}/{{$recent_blog->id}}">{{$recent_blog->title}}</a>

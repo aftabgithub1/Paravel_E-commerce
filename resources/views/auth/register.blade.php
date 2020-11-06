@@ -42,7 +42,12 @@
 
   <body>
 
-    <div class="d-flex align-items-center justify-content-center bg-sl-primary ht-md-100v">
+    <div class="d-flex align-items-center justify-content-center ht-md-100v"
+      style="background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url({{asset('frontend_assets/images/bg/bg_login_ragister.jpg')}}) center/cover no-repeat">
+      
+      <a href="{{url('/')}}" 
+      style="position: absolute; top:0; right:0; font-size:3em; margin-right:15px;">
+      &times;</a>
 
       <div class="login-wrapper wd-300 wd-xs-400 pd-25 pd-xs-40 bg-white">
         <div class="signin-logo tx-center tx-24 tx-bold tx-inverse">Paravel <span class="tx-info tx-normal">admin</span></div>

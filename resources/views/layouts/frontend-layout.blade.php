@@ -117,7 +117,6 @@
 						<ul class="d-flex account_login-area">
 							@auth
 							<li>
-								
 								<a href="javascript:void(0);">
 								<div class="row align-items-center">
 								<div class="navbar-profile-image mr-2">
