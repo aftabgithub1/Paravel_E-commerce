@@ -1,5 +1,5 @@
 # Paravel
-This is my first Laravel E-commerce project. It is still in progrss. 
+This is my first Laravel E-commerce project. It is still in progress. 
 
 ## PacKages used in thid project
 
