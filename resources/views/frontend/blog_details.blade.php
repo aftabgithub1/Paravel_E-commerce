@@ -122,13 +122,11 @@ Blog Details
 								@foreach($recent_blogs->slice(0, 6) as $recent_blog)
 								@if($recent_blog->id != $blog->id)
 								<li>
-									<div class="mb-1">
-										<a href="{{url('blog-details/'.$recent_blog->id.'/'.Str::slug($recent_blog->title))}}"><img src="{{asset('uploads/blogs')}}/{{$recent_blog->image}}"></a>
-									</div>
-									<div class="post-content">
-										<a href="{{url('blog-details')}}/{{$recent_blog->id}}">{{$recent_blog->title}}</a>
-										<p>{{$recent_blog->created_at->format('d M Y')}}</p>
-									</div>
+										<a href="{{url('blog-details/'.$recent_blog->id.'/'.Str::slug($recent_blog->title))}}">
+											<img src="{{asset('uploads/blogs')}}/{{$recent_blog->image}}">
+											<div>{{$recent_blog->title}}</div>
+											<div>{{$recent_blog->created_at->format('d M Y')}}</div>
+										</a>
 								</li>
 								@endif
 								@endforeach
