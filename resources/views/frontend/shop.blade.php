@@ -96,8 +96,10 @@
 											<h3>{{$product->product_name}}</h3>
 											<div class="rating-wrap fix">
 												<span class="pull-left">{{$product->price}}</span>
-												@component('frontend.frontend-includes.review_stars', ['product_id' => $product->id])
-												@endcomponent
+												
+												<!-- Review Stars -->
+												@component('frontend.frontend-includes.review_stars', ['product_id' => $product->id]) @endcomponent
+
 												<span>({{App\OrderList::where('product_id',$product->id)->whereNotNull('review')->count()}} Customar Review)
 												</span>  
 											</div>
