@@ -7,6 +7,7 @@ use App\Http\Requests\FaqFormPost;
 use App\Http\Requests\EditProfilePost;
 use App\Http\Requests\UserEditPost;
 use App\Mail\PassChangeConfirm;
+use App\Mail\SendEmail;
 use App\Faq;
 use App\User;
 use App\Category;
@@ -127,5 +128,24 @@ class DashboardController extends Controller
 			'faq_answer'=>$request->faq_answer
 		]);
 	return back()->with('editFaqAlert', 'FAQ Updated Successfully!');
+	}
+
+
+	public function mailCustomerSend(Request $request){
+		$this->validate($request, [
+			'email' => 'required|email',
+			'subject' => 'required',
+			'message' => 'required',
+		]);
+		
+		$mail_data = array(
+			'email' => $request->email,
+			'subject' => $request->subject,
+			'message' => $request->message,
+		);
+
+		Mail::to($mail_data['email'])->send(new SendEmail($mail_data));
+
+		return back()->with('mail_alert', 'Mail Sent!');
 	}
 } 

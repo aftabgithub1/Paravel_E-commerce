@@ -127,6 +127,13 @@
 						<span class="menu-item-label">Frontend Elements</span>
 					</div><!-- menu-item -->
 				</a><!-- sl-menu-link -->
+
+				<a href="{{url('mail-customer')}}" class="sl-menu-link @yield('mail-customer')">
+					<div class="sl-menu-item">
+						<i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+						<span class="menu-item-label">Mail Customer</span>
+					</div><!-- menu-item -->
+				</a><!-- sl-menu-link -->
  
 				<a href="#" class="sl-menu-link @yield('trash')">
 					<div class="sl-menu-item">

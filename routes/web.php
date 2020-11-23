@@ -66,6 +66,9 @@ Route::post('/editprofilepost', 'DashboardController@editprofilepost');
 
 Route::get('/userdelete/{user_id}', 'DashboardController@userDelete');
 
+Route::view('/mail-customer', 'admin.mail_customer');
+Route::get('/mail-customer/send', 'DashboardController@mailCustomerSend');
+
 // User Role
 Route::get('/role', 'RoleController@roleManager');
 Route::post('/add-permission', 'RoleController@addPermission');
@@ -94,6 +97,7 @@ Route::get('/customer-dashboard', 'CustomerController@customerDashboard')->name(
 Route::get('/customer-order', 'CustomerController@customerOrder');
 Route::get('/download-pdf/{order_id}', 'CustomerController@downloadPdf');
 Route::get('/send-sms/{send_sms}', 'CustomerController@sendSms');
+
 
 
 // All FAQ Routes
